@@ -47,4 +47,9 @@ public class PropertyManager extends AbstractManager {
 
   }
 
+  public void acquireExclusiveLockForInstallationId() {
+    // We lock a special installation id lock property
+    getDbEntityManager().lock("lockInstallationIdLockProperty");
+  }
+
 }
